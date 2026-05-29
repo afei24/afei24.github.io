@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动 | 芦鹏飞的 AI 博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动 你以为AI只会聊天？它已经能独立完成你半天的工作了。   去年年底，我看到一篇博文说”AI Agent能自动完成办公任务”，当时觉得不过是噱头。 直到我实际跑完了这个流程—— AI读取销售数据 → 自动分析趋势 → 绘制折线图 → 提炼洞察 → 生成标题 → 配封面图 → 输出完整PPT 全程没有任何人工干预。 代码不到150行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动">
+<meta property="og:url" content="https://afei24.github.io/2026/05/12/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:site_name" content="芦鹏飞的 AI 博客">
+<meta property="og:description" content="我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动 你以为AI只会聊天？它已经能独立完成你半天的工作了。   去年年底，我看到一篇博文说”AI Agent能自动完成办公任务”，当时觉得不过是噱头。 直到我实际跑完了这个流程—— AI读取销售数据 → 自动分析趋势 → 绘制折线图 → 提炼洞察 → 生成标题 → 配封面图 → 输出完整PPT 全程没有任何人工干预。 代码不到150行">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-12T01:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-29T05:57:32.522Z">
+<meta property="article:author" content="芦鹏飞">
+<meta property="article:tag" content="AI Agent">
+<meta property="article:tag" content="效率工具">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="芦鹏飞的 AI 博客" type="application/atom+xml">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div class="outer">
+    <div class="site-shell site-nav-shell">
+      <div class="site-nav-brand">
+        <a href="/" id="logo">芦鹏飞的 AI 博客</a>
+        
+          <p id="subtitle">用更简洁的方式，记录技术与灵感</p>
+        
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <div class="site-nav-actions">
+        <a class="site-nav-cta" href="/archives">订阅更新</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-知乎文章-第四章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    <div class="article-meta">
+      <a href="/2026/05/12/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E5%9B%9B%E7%AB%A0/" class="article-date">
+  <time class="dt-published" datetime="2026-05-12T01:00:00.000Z" itemprop="datePublished">2026-05-12</time>
+</a>
+      <span class="article-author">芦鹏飞</span>
+    </div>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动"><a href="#我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动" class="headerlink" title="我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动"></a>我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动</h1><blockquote>
+<p>你以为AI只会聊天？它已经能独立完成你半天的工作了。</p>
+</blockquote>
+<hr>
+<p>去年年底，我看到一篇博文说”AI Agent能自动完成办公任务”，当时觉得不过是噱头。</p>
+<p>直到我实际跑完了这个流程——</p>
+<p><strong>AI读取销售数据 → 自动分析趋势 → 绘制折线图 → 提炼洞察 → 生成标题 → 配封面图 → 输出完整PPT</strong></p>
+<p>全程没有任何人工干预。</p>
+<p>代码不到150行，等待时间约5分钟，输出一份质量过关、可以直接对外呈现的PPT。</p>
+<p>我当时的感受是：<strong>这不是”AI辅助办公”，这是AI在替人办公。</strong></p>
+<p>这篇文章想把这个过程完整拆解给你，不只是怎么做，更是为什么能这么做。</p>
+<hr>
+<h2 id="一、这件事为什么在2024年才成为可能"><a href="#一、这件事为什么在2024年才成为可能" class="headerlink" title="一、这件事为什么在2024年才成为可能"></a>一、这件事为什么在2024年才成为可能</h2><p>在讲怎么做之前，先说一个重要的背景。</p>
+<p>过去我们说”AI自动化”，通常意味着：给AI写一个固定的脚本，让它按脚本走。这叫<strong>规则驱动</strong>。问题是，真实的工作场景太灵活了，数据格式可能不对、文件可能有编码问题、图表颜色要改……规则稍微不对就崩。</p>
+<p><strong>而 Assistants API 的本质，是一种新的范式：不写死流程，把目标交给AI，让它自己想办法。</strong></p>
+<p>这里有两个关键的技术支撑：</p>
+<p><strong>第一，Code Interpreter（代码解释器）。</strong> AI不只是”说”它会做，它真的会在后台写Python代码并执行——遇到CSV格式不对，就试着换编码重读；遇到日期解析失败，就换一种方法再来。这种”边想边做、出错自纠”的能力，才是让自动化真正可靠的核心。</p>
+<p><strong>第二，持久化的对话上下文。</strong> 传统API每次请求都是孤立的。Assistants API里引入了Thread（线程）和Run（运行）的概念，让AI能在一个持续的”记忆”框架里工作，前面做的图表、分析出的见解，在后续任务里都能引用。</p>
+<p>这就是为什么一句话”用你刚才创建的图表，提炼两条见解”可以生效——AI真的记得它刚才做了什么。</p>
+<hr>
+<h2 id="二、理解-Assistants-API-的架构：三个核心概念"><a href="#二、理解-Assistants-API-的架构：三个核心概念" class="headerlink" title="二、理解 Assistants API 的架构：三个核心概念"></a>二、理解 Assistants API 的架构：三个核心概念</h2><p>在看代码之前，必须先理解三个关键概念，否则你只会跑通示例，不会举一反三。</p>
+<h3 id="1-Assistant（助手）：AI的”职位说明书”"><a href="#1-Assistant（助手）：AI的”职位说明书”" class="headerlink" title="1. Assistant（助手）：AI的”职位说明书”"></a>1. Assistant（助手）：AI的”职位说明书”</h3><p>一个 Assistant 是你配置好的 AI 角色。它包含：</p>
+<ul>
+<li><strong>name</strong>：叫什么名字</li>
+<li><strong>instructions</strong>：人设和行为准则，例如”你是一名数据科学助理，遇到任何数据分析任务都可以编写代码解决”</li>
+<li><strong>tools</strong>：可以调用哪些工具（代码解释器、文件检索、自定义函数等）</li>
+<li><strong>model</strong>：底层使用哪个 GPT 模型</li>
+</ul>
+<p>Assistant 创建一次之后就存在了，有自己的 ID，可以反复复用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">assistant = client.beta.assistants.create(</span><br><span class="line">    name=<span class="string">&quot;数据科学助理&quot;</span>,</span><br><span class="line">    instructions=<span class="string">&quot;作为一名数据科学助理，当给定数据和一个查询时，你能编写适当的代码并创建适当的可视化。&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gpt-4-turbo-preview&quot;</span>,</span><br><span class="line">    tools=[&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;code_interpreter&quot;</span>&#125;]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Thread（线程）：一次工作任务的”记忆存档”"><a href="#2-Thread（线程）：一次工作任务的”记忆存档”" class="headerlink" title="2. Thread（线程）：一次工作任务的”记忆存档”"></a>2. Thread（线程）：一次工作任务的”记忆存档”</h3><p>Thread 是一个持续的对话容器。</p>
+<p>类比一下：你和一位同事通过微信沟通一个项目，这个微信对话框就是 Thread——所有的消息、中间产物、历史记录全都在这里。</p>
+<p>Thread 与 Assistant 是解耦的——同一个 Thread 可以先后被不同的 Assistant 处理，同一个 Assistant 也可以同时服务多个 Thread。</p>
+<p><strong>关键设计</strong>：Thread 对消息数量没有限制，OpenAI 会自动压缩和管理上下文，确保不超过模型的 token 窗口。这意味着你不用自己管理对话历史——这是之前开发者最头疼的事情之一。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">thread = client.beta.threads.create()</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Run（运行）：一次具体的”执行实例”"><a href="#3-Run（运行）：一次具体的”执行实例”" class="headerlink" title="3. Run（运行）：一次具体的”执行实例”"></a>3. Run（运行）：一次具体的”执行实例”</h3><p>每次你向 Thread 中提交一个任务，让 Assistant 去处理，就创建了一个 Run。</p>
+<p>Run 有一个完整的状态机：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">queued → in_progress → completed</span><br><span class="line">                    ↓</span><br><span class="line">              requires_action（需要你本地执行函数后继续）</span><br><span class="line">                    ↓</span><br><span class="line">              expired / failed / cancelled</span><br></pre></td></tr></table></figure>
+
+<p><strong>requires_action 这个状态特别重要</strong>——它是第5章要讲的 Function Calling 的关键，AI在这里会暂停，等你提供外部函数的执行结果，再继续推进。</p>
+<hr>
+<h2 id="三、一步步看完整的-PPT-自动化流程"><a href="#三、一步步看完整的-PPT-自动化流程" class="headerlink" title="三、一步步看完整的 PPT 自动化流程"></a>三、一步步看完整的 PPT 自动化流程</h2><p>理解了架构，我们来看实际的执行过程。这里用书中的完整案例：根据3本书的季度销售数据，自动制作一份投资人汇报 PPT。</p>
+<h3 id="第一步：初始化，上传数据文件，创建-Assistant"><a href="#第一步：初始化，上传数据文件，创建-Assistant" class="headerlink" title="第一步：初始化，上传数据文件，创建 Assistant"></a>第一步：初始化，上传数据文件，创建 Assistant</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI</span><br><span class="line">client = OpenAI()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传 CSV 数据文件</span></span><br><span class="line">file = client.files.create(</span><br><span class="line">    file=<span class="built_in">open</span>(<span class="string">&quot;sales_data.csv&quot;</span>, <span class="string">&quot;rb&quot;</span>),</span><br><span class="line">    purpose=<span class="string">&#x27;assistants&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建数据分析助手，并赋予文件访问权限</span></span><br><span class="line">assistant = client.beta.assistants.create(</span><br><span class="line">    instructions=<span class="string">&quot;作为一名数据科学助理，当给定数据和一个查询时，你能编写适当的代码并创建适当的可视化。&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;gpt-4-turbo-preview&quot;</span>,</span><br><span class="line">    tools=[&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;code_interpreter&quot;</span>&#125;],</span><br><span class="line">    tool_resources=&#123;<span class="string">&quot;code_interpreter&quot;</span>: &#123;<span class="string">&quot;file_ids&quot;</span>: [file.<span class="built_in">id</span>]&#125;&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二步：创建-Thread，提交第一个任务——画图"><a href="#第二步：创建-Thread，提交第一个任务——画图" class="headerlink" title="第二步：创建 Thread，提交第一个任务——画图"></a>第二步：创建 Thread，提交第一个任务——画图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">thread = client.beta.threads.create(</span><br><span class="line">    messages=[&#123;</span><br><span class="line">        <span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: <span class="string">&quot;计算从2022年到2025年每个季度的总销售额，并通过不同的产品将其可视化为折线图，产品线条颜色分别为红，蓝，绿。&quot;</span>,</span><br><span class="line">        <span class="string">&quot;attachments&quot;</span>: [&#123;<span class="string">&quot;file_id&quot;</span>: file.<span class="built_in">id</span>, <span class="string">&quot;tools&quot;</span>: [&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;code_interpreter&quot;</span>&#125;]&#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">run = client.beta.threads.runs.create(</span><br><span class="line">    thread_id=thread.<span class="built_in">id</span>,</span><br><span class="line">    assistant_id=assistant.<span class="built_in">id</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>然后轮询等待 Run 完成，把生成的图表保存为 PNG。</p>
+<p>这里有一个细节值得注意：<strong>AI在执行过程中会反复尝试</strong>。真实运行时可以看到这样的思考过程：</p>
+<blockquote>
+<p>“看来在尝试读取文件时遇到一些问题，因为我没有成功地加载它。刚才的尝试包括将文件作为CSV和Excel格式读取，但这两种方式都失败了。为了解决这个问题，我需要尝试指定特定的编码（如UTF-8）重新加载”</p>
+</blockquote>
+<p>这不是在胡说，这是 Code Interpreter 真实的自我纠错过程。它失败了，分析了原因，换了方法，重来。这才是让自动化可信赖的关键。</p>
+<h3 id="第三步：在同一个-Thread-里继续追问——提炼洞察"><a href="#第三步：在同一个-Thread-里继续追问——提炼洞察" class="headerlink" title="第三步：在同一个 Thread 里继续追问——提炼洞察"></a>第三步：在同一个 Thread 里继续追问——提炼洞察</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基于刚才的图表，再发一条消息</span></span><br><span class="line">client.beta.threads.messages.create(</span><br><span class="line">    thread_id=thread.<span class="built_in">id</span>,</span><br><span class="line">    role=<span class="string">&quot;user&quot;</span>,</span><br><span class="line">    content=<span class="string">&quot;请根据你刚才创建的图表，给我两个约20字的句子，描述最重要的见解。这将用于PPT展示。&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">run = client.beta.threads.runs.create(</span><br><span class="line">    thread_id=thread.<span class="built_in">id</span>,</span><br><span class="line">    assistant_id=assistant.<span class="built_in">id</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>AI 的回答：</p>
+<blockquote>
+<ol>
+<li>“从2022年到2025年，’数据分析咖哥十话’的季度销售额呈现出稳步增长的趋势。”</li>
+<li>“相比之下，’GPT图解’和’零基础学机器学习’在同一时期的销售额波动较大。”</li>
+</ol>
+</blockquote>
+<p>不得不说，这个质量真的不亚于刚入职的数据分析师。</p>
+<h3 id="第四步：DALL·E-3-生成封面图"><a href="#第四步：DALL·E-3-生成封面图" class="headerlink" title="第四步：DALL·E 3 生成封面图"></a>第四步：DALL·E 3 生成封面图</h3><p>AI 不只会处理数字，它还能根据公司简介，生成专属的封面配图：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">response = client.images.generate(</span><br><span class="line">    model=<span class="string">&#x27;dall-e-3&#x27;</span>,</span><br><span class="line">    prompt=<span class="string">f&quot;根据这家公司的简介 <span class="subst">&#123;company_summary&#125;</span>，创建一张展示公司成长和前进道路的启发性照片。这将用于季度销售规划会议&quot;</span>,</span><br><span class="line">    size=<span class="string">&quot;1024x1024&quot;</span>,</span><br><span class="line">    quality=<span class="string">&quot;hd&quot;</span>,</span><br><span class="line">    n=<span class="number">1</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>这一步是本章最让我惊喜的部分。<strong>你给了一句话的公司描述，AI生成的图片里真的有品牌感、有叙事感。</strong> 传统设计需要找设计师沟通、出稿、修改，这里一秒完成。</p>
+<h3 id="第五步：一键生成-PPT-文件"><a href="#第五步：一键生成-PPT-文件" class="headerlink" title="第五步：一键生成 PPT 文件"></a>第五步：一键生成 PPT 文件</h3><p>把图表、洞察、标题、封面图全部喂给 Assistant，指定 python-pptx 模板，让它组装成 PPT：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">submit_message_wait_completion(</span><br><span class="line">    assistant.<span class="built_in">id</span>, thread,</span><br><span class="line">    <span class="string">f&quot;使用以下代码模板创建PPT：<span class="subst">&#123;title_template&#125;</span>，使用 <span class="subst">&#123;dalle_image&#125;</span> 作为封面图，<span class="subst">&#123;title_text&#125;</span> 作为标题。然后创建第二张PPT：<span class="subst">&#123;details_template&#125;</span>，使用之前生成的折线图和见解。输出为 .pptx 格式。&quot;</span>,</span><br><span class="line">    file_ids=[dalle_file.<span class="built_in">id</span>, plot_file.<span class="built_in">id</span>]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>等几分钟，一个完整的 <code>.pptx</code> 文件就出现在你的目录里。</p>
+<hr>
+<h2 id="四、这件事真正颠覆了什么"><a href="#四、这件事真正颠覆了什么" class="headerlink" title="四、这件事真正颠覆了什么"></a>四、这件事真正颠覆了什么</h2><p>我把 Assistants API 的运行过程想了很久，觉得它真正颠覆的不是某个具体任务，而是<strong>人与AI协作的方式</strong>。</p>
+<h3 id="传统的”AI辅助”模式"><a href="#传统的”AI辅助”模式" class="headerlink" title="传统的”AI辅助”模式"></a>传统的”AI辅助”模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">人类想清楚 → 人类分解步骤 → 告诉AI每一步怎么做 → AI执行 → 人类检查 → 人类整合</span><br></pre></td></tr></table></figure>
+
+<p>这种模式下，AI是”电动工具”，工具再好用，还是人在操作。</p>
+<h3 id="新的”AI代理”模式"><a href="#新的”AI代理”模式" class="headerlink" title="新的”AI代理”模式"></a>新的”AI代理”模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">人类提出目标 → AI规划步骤 → AI执行 → AI自我检查和纠错 → AI整合输出 → 人类最终确认</span><br></pre></td></tr></table></figure>
+
+<p>这种模式下，AI是”初级员工”，它有自主性、有记忆、能纠错、会向上汇报结果。</p>
+<p><strong>两者的区别，不是效率的10%提升，是角色的根本转变。</strong></p>
+<h3 id="谁最先感受到冲击？"><a href="#谁最先感受到冲击？" class="headerlink" title="谁最先感受到冲击？"></a>谁最先感受到冲击？</h3><p>不是程序员，而是<strong>大量依赖”信息整合 + 格式输出”的知识工作者</strong>：数据分析师、运营策划、产品经理、投资分析师……</p>
+<p>这些工作有一个共同特征：核心价值在于判断力，而不是信息处理本身。信息处理的部分，AI已经能做了。</p>
+<hr>
+<h2 id="五、一个隐藏的洞见：提示词质量真的很重要"><a href="#五、一个隐藏的洞见：提示词质量真的很重要" class="headerlink" title="五、一个隐藏的洞见：提示词质量真的很重要"></a>五、一个隐藏的洞见：提示词质量真的很重要</h2><p>书里有一段话我印象深刻，关于”自我实现预言”：</p>
+<blockquote>
+<p>尽管大模型的能力由训练决定，但用户的期望和反馈确实可以影响交互质量。正面的互动和反馈可能会激发更丰富的探索，消极的反馈可能导致更受限的交互。</p>
+</blockquote>
+<p>这听起来像玄学，但背后有认知科学依据。语言模型是在对话上下文中生成输出的，你的语气、信心程度、对AI能力的预设，都会微妙地影响它下一个 token 的概率分布。</p>
+<p><strong>在实践中，这意味着：清晰、积极、具体的提示词，会持续给你更好的结果。</strong> 这不是在哄 AI，这是信息传达的基本原理——你给的上下文越丰富准确，它能调用的背景知识就越精准。</p>
+<hr>
+<h2 id="六、局限性：你应该知道的坑"><a href="#六、局限性：你应该知道的坑" class="headerlink" title="六、局限性：你应该知道的坑"></a>六、局限性：你应该知道的坑</h2><p>这套方案虽然令人兴奋，但有几个局限性需要老实说：</p>
+<p><strong>1. 速度慢。</strong> Code Interpreter 实际执行代码的过程通常需要数分钟，不适合对响应时间有要求的场景。</p>
+<p><strong>2. 不稳定。</strong> 2024年的 Assistants API 仍处于 Beta 阶段，偶发的 Timeout 和执行失败是正常现象，需要在代码里做好重试逻辑。</p>
+<p><strong>3. 成本不可控。</strong> Thread 的消息不设上限，意味着 token 消耗难以精确估算。复杂的多轮对话可能比你预期消耗多得多的 API 费用。</p>
+<p><strong>4. 输出质量不稳定。</strong> AI 生成的 PPT 可以”堪用”，但要达到”精品”还需要人工调整。目前最合理的定位是：<strong>AI 生成初稿，人工精修。</strong></p>
+<hr>
+<h2 id="七、回到最开始的问题"><a href="#七、回到最开始的问题" class="headerlink" title="七、回到最开始的问题"></a>七、回到最开始的问题</h2><p>做完这个 demo，我重新想了想那个一直困扰我的问题：</p>
+<p><strong>AI会抢走多少工作？</strong></p>
+<p>我的答案变了。</p>
+<p>以前我觉得这是个”会不会”的问题。现在我觉得这是个”谁先用、谁先跑通”的问题。</p>
+<p>一个掌握了 Assistants API 的运营人，可以在10分钟内完成以前需要半天的汇报准备。那个没掌握的同事，还在Excel里手动拖数据。</p>
+<p>这不是 AI 抢走了谁的工作，这是<strong>工具拉开了人与人之间的效率差距</strong>。</p>
+<p>历史上每一次重要的生产力革命都是这样——蒸汽机没有消灭工人，但它消灭了拒绝使用蒸汽机的工厂。</p>
+<hr>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>如果你只记住一件事，记住这个：</p>
+<p><strong>Assistants API 的核心不是”让 AI 更聪明”，而是”给 AI 装上手脚和记忆”。</strong> Thread 是记忆，Code Interpreter 是手，Run 是一次完整的思考-行动循环。</p>
+<p>这三件事合在一起，才让 AI 从”一个能回答问题的大脑”，变成”一个能完成任务的助手”。</p>
+<p>这就是 Agent 的起点。</p>
+<hr>
+<p><em>技术框架参考《大模型应用开发——动手做AI Agent》（2024中文版）第四章，观点和分析为作者原创。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a class="article-readmore" href="/2026/05/12/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E5%9B%9B%E7%AB%A0/">继续阅读</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI-Agent/" rel="tag">AI Agent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/" rel="tag">效率工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/13/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E4%B8%80%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          AI Agent不是聊天机器人——重新理解&#34;智能体&#34;的本质与边界
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/11/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E4%B8%89%E7%AB%A0-AI%20Agent%E5%BC%80%E5%8F%91%E4%B8%89%E5%A4%A7%E7%A5%9E%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p class="footer-brand">芦鹏飞的 AI 博客</p>
+      <p class="footer-copy">&copy; 2026 芦鹏飞 · Built with Hexo</p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

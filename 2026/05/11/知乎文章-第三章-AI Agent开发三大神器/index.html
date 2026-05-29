@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析 | 芦鹏飞的 AI 博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析 如果你正在关注AI Agent开发，那么这三把”屠龙刀”你一定绕不开。   2024年，AI Agent无疑是业界最炙手可热的话题。从吴恩达到OpenAI，从硅谷到中关村，所有人都在谈论Agent——这种能感知环境、自主决策、调用工具、执行任务的人工智能实体。 但当我们真正动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析">
+<meta property="og:url" content="https://afei24.github.io/2026/05/11/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E4%B8%89%E7%AB%A0-AI%20Agent%E5%BC%80%E5%8F%91%E4%B8%89%E5%A4%A7%E7%A5%9E%E5%99%A8/index.html">
+<meta property="og:site_name" content="芦鹏飞的 AI 博客">
+<meta property="og:description" content="从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析 如果你正在关注AI Agent开发，那么这三把”屠龙刀”你一定绕不开。   2024年，AI Agent无疑是业界最炙手可热的话题。从吴恩达到OpenAI，从硅谷到中关村，所有人都在谈论Agent——这种能感知环境、自主决策、调用工具、执行任务的人工智能实体。 但当我们真正动">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-11T01:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-29T05:57:32.519Z">
+<meta property="article:author" content="芦鹏飞">
+<meta property="article:tag" content="AI Agent">
+<meta property="article:tag" content="开发工具">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="芦鹏飞的 AI 博客" type="application/atom+xml">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div class="outer">
+    <div class="site-shell site-nav-shell">
+      <div class="site-nav-brand">
+        <a href="/" id="logo">芦鹏飞的 AI 博客</a>
+        
+          <p id="subtitle">用更简洁的方式，记录技术与灵感</p>
+        
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <div class="site-nav-actions">
+        <a class="site-nav-cta" href="/archives">订阅更新</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-知乎文章-第三章-AI Agent开发三大神器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    <div class="article-meta">
+      <a href="/2026/05/11/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E4%B8%89%E7%AB%A0-AI%20Agent%E5%BC%80%E5%8F%91%E4%B8%89%E5%A4%A7%E7%A5%9E%E5%99%A8/" class="article-date">
+  <time class="dt-published" datetime="2026-05-11T01:00:00.000Z" itemprop="datePublished">2026-05-11</time>
+</a>
+      <span class="article-author">芦鹏飞</span>
+    </div>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="从零构建AI-Agent，你必须掌握的三大开发神器：OpenAI-API、LangChain与LlamaIndex深度解析"><a href="#从零构建AI-Agent，你必须掌握的三大开发神器：OpenAI-API、LangChain与LlamaIndex深度解析" class="headerlink" title="从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析"></a>从零构建AI Agent，你必须掌握的三大开发神器：OpenAI API、LangChain与LlamaIndex深度解析</h1><blockquote>
+<p>如果你正在关注AI Agent开发，那么这三把”屠龙刀”你一定绕不开。</p>
+</blockquote>
+<hr>
+<p>2024年，AI Agent无疑是业界最炙手可热的话题。从吴恩达到OpenAI，从硅谷到中关村，所有人都在谈论Agent——这种能感知环境、自主决策、调用工具、执行任务的人工智能实体。</p>
+<p>但当我们真正动手去构建一个Agent时，第一个问题就来了：<strong>用什么工具？</strong></p>
+<p>答案绕不开三个名字：<strong>OpenAI API、LangChain、LlamaIndex</strong>。</p>
+<p>这三者到底有什么区别？各有什么优劣？分别在什么场景下使用？本文带你一探究竟。</p>
+<hr>
+<h2 id="一、OpenAI-API：Agent开发的基石"><a href="#一、OpenAI-API：Agent开发的基石" class="headerlink" title="一、OpenAI API：Agent开发的基石"></a>一、OpenAI API：Agent开发的基石</h2><h3 id="1-1-OpenAI是谁？"><a href="#1-1-OpenAI是谁？" class="headerlink" title="1.1 OpenAI是谁？"></a>1.1 OpenAI是谁？</h3><p>讲OpenAI API之前，先聊聊这家传奇公司。</p>
+<p>2015年夏天，Sam Altman约Google Brain的科学家Ilya Sutskever在Google总部附近的汉堡店共进晚餐。饭后Altman坐回车中，心想：<em>我必须和这个人一起工作。</em></p>
+<p>随后，Altman、Elon Musk、Greg Brockman等一群对AI技术集中化感到忧虑的科技领袖，共同创立了OpenAI。其核心目标简单而宏大——<strong>创建一个独立于大型科技公司的、开源的人工智能实体，确保AI技术惠及全人类</strong>。</p>
+<p>之后的故事人尽皆知：从GPT-1到GPT-4，从默默无闻到800亿美元估值，OpenAI用不到十年时间，成为了AI时代的”无敌战舰”。</p>
+<h3 id="1-2-OpenAI-API能做什么？"><a href="#1-2-OpenAI-API能做什么？" class="headerlink" title="1.2 OpenAI API能做什么？"></a>1.2 OpenAI API能做什么？</h3><p>对于开发者而言，OpenAI API是访问GPT-4等大模型的核心通道。简单来说，你需要做的只是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI</span><br><span class="line"></span><br><span class="line">client = OpenAI()</span><br><span class="line"></span><br><span class="line">response = client.chat.completions.create(</span><br><span class="line">    model=<span class="string">&quot;gpt-4-turbo-preview&quot;</span>,</span><br><span class="line">    response_format=&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;json_object&quot;</span>&#125;,</span><br><span class="line">    messages=[</span><br><span class="line">        &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;system&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;你是一个帮助用户了解鲜花信息的智能助手，并能够输出JSON格式的内容。&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;生日送什么花最好？&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;assistant&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;玫瑰花是生日礼物的热门选择。&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;送货需要多长时间？&quot;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(response.choices[<span class="number">0</span>].message.content)</span><br></pre></td></tr></table></figure>
+
+<p>上面这段代码展示了OpenAI API的核心交互模式：</p>
+<ul>
+<li><strong>model参数</strong>：指定使用哪个模型（GPT-4 Turbo、GPT-3.5 Turbo等）</li>
+<li><strong>messages参数</strong>：消息数组，承载对话上下文（system&#x2F;user&#x2F;assistant三种角色），本质上是AI的<strong>短期记忆</strong></li>
+<li><strong>response_format参数</strong>：指定输出格式（如JSON模式，便于后续程序解析）</li>
+</ul>
+<p>特别值得关注的是<strong>JSON模式</strong>——它确保模型输出合法的JSON对象，这对于Agent的函数调用至关重要。因为Agent拿到大模型的输出后，往往需要将其传递给其他函数和工具，而结构化的JSON就是最好的”交接语言”。</p>
+<p>不止文本生成，OpenAI API还支持<strong>DALL·E图像生成</strong>、<strong>Whisper语音识别</strong>等多模态能力。一句话调用，就能生成专业级海报：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">response = client.images.generate(</span><br><span class="line">    model=<span class="string">&quot;dall-e-3&quot;</span>,</span><br><span class="line">    prompt=<span class="string">&quot;电商花语秘境的新春玫瑰花宣传海报，配上文案&quot;</span>,</span><br><span class="line">    size=<span class="string">&quot;1024x1024&quot;</span>,</span><br><span class="line">    quality=<span class="string">&quot;standard&quot;</span>,</span><br><span class="line">    n=<span class="number">1</span>,</span><br><span class="line">)</span><br><span class="line">image_url = response.data[<span class="number">0</span>].url</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-必须知道的几个实践要点"><a href="#1-3-必须知道的几个实践要点" class="headerlink" title="1.3 必须知道的几个实践要点"></a>1.3 必须知道的几个实践要点</h3><p><strong>关于temperature参数</strong>：取值范围0-2。低值（如0.2）产生更一致、确定性的输出，适合客服、事实问答；高值（如1.0）产生更富创造力的输出，适合创意写作、头脑风暴。</p>
+<p><strong>关于数据隐私</strong>：OpenAI承诺自2023年3月1日起，API传输的数据仅保留30天，不再用于模型训练。</p>
+<p><strong>关于费率限制</strong>：遇到rate-limited错误时，注意API密钥的速率限制等级，合理规划调用频率，或在代码中实现重试机制。</p>
+<p><strong>关于Token计费</strong>：这是每个开发者都要精打细算的事情。GPT-4的输入费用是每1000 token 0.03美元，而GPT-3.5 Turbo仅需0.001美元——<strong>差了30倍</strong>。GPT-4 Turbo比原版GPT-4便宜一半。日常聊天花费很低，但大规模文档处理就要注意成本控制了。</p>
+<hr>
+<h2 id="二、LangChain：”大而全”的Agent开发框架"><a href="#二、LangChain：”大而全”的Agent开发框架" class="headerlink" title="二、LangChain：”大而全”的Agent开发框架"></a>二、LangChain：”大而全”的Agent开发框架</h2><h3 id="2-1-LangChain为什么诞生？"><a href="#2-1-LangChain为什么诞生？" class="headerlink" title="2.1 LangChain为什么诞生？"></a>2.1 LangChain为什么诞生？</h3><p>虽然直接调用OpenAI API已经很强大了，但当你需要构建一个复杂的Agent时，你会发现很多重复工作：</p>
+<ul>
+<li>管理提示模板和提示词</li>
+<li>与不同类型的大模型交互</li>
+<li>实现ReAct等推理框架</li>
+<li>与外部数据源交互</li>
+<li>维护对话状态和历史记忆</li>
+</ul>
+<p>LangChain的创始人在2022年10月启动了该项目——<strong>比ChatGPT发布还早了一个月</strong>，这眼光确实毒辣。到2023年4月，LangChain获得了红杉资本超过2000万美元的投资。吴恩达也亲自与LangChain创始人合作开发了公开课。</p>
+<h3 id="2-2-LangChain的三大优势"><a href="#2-2-LangChain的三大优势" class="headerlink" title="2.2 LangChain的三大优势"></a>2.2 LangChain的三大优势</h3><p><strong>第一，灵活的模型集成。</strong> LangChain提供了与多种大模型交互的统一接口——不仅支持OpenAI，还支持Cohere、Hugging Face、智谱ChatGLM等。你可以通过ModelLaboratory同时测试多个模型，选择表现最好的那一个。</p>
+<p><strong>第二，丰富的技术封装。</strong> 你只需要调用<code>create_react_agent</code>函数，就能创建一个拥有ReAct思维框架的Agent——所有复杂的推理细节都被封装好了。这就像用PyTorch训练模型时，你不需要手写梯度下降和自动微分一样。</p>
+<p><strong>第三，全面的第三方集成。</strong> LangChain与各种向量数据库、搜索引擎、API服务都有现成的集成接口，提供一站式解决方案。</p>
+<p>用LangChain的LCEL（LangChain Expression Language）来构建一个链式应用，体验一下什么叫”丝滑”：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"></span><br><span class="line">prompt = ChatPromptTemplate.from_template(<span class="string">&quot;请讲一个关于 &#123;topic&#125; 的故事&quot;</span>)</span><br><span class="line">model = ChatOpenAI(model=<span class="string">&quot;gpt-4&quot;</span>)</span><br><span class="line">output_parser = StrOutputParser()</span><br><span class="line"></span><br><span class="line">chain = prompt | model | output_parser</span><br><span class="line"></span><br><span class="line">message = chain.invoke(&#123;<span class="string">&quot;topic&quot;</span>: <span class="string">&quot;水仙花&quot;</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br></pre></td></tr></table></figure>
+
+<p>注意那个<code>|</code>管道操作符——这就是LCEL的核心，它让组件组合变得直观而优雅。</p>
+<h3 id="2-3-LangChain的六大模块"><a href="#2-3-LangChain的六大模块" class="headerlink" title="2.3 LangChain的六大模块"></a>2.3 LangChain的六大模块</h3><p>LangChain由六大模块构成：</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>核心功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>模型I&#x2F;O</strong></td>
+<td>与大模型的接口，负责提示模板构建和输出解析</td>
+</tr>
+<tr>
+<td><strong>检索</strong></td>
+<td>从外部数据源获取数据，连接数据库、文件系统等</td>
+</tr>
+<tr>
+<td><strong>Agents</strong></td>
+<td>根据高层指令自主选择和使用工具</td>
+</tr>
+<tr>
+<td><strong>链</strong></td>
+<td>构建复杂逻辑和功能流水线的基础组件</td>
+</tr>
+<tr>
+<td><strong>记忆</strong></td>
+<td>持久化状态，记住先前的交互和信息</td>
+</tr>
+<tr>
+<td><strong>回调</strong></td>
+<td>记录和传输链的中间步骤，便于监控和调试</td>
+</tr>
+</tbody></table>
+<p>这六大模块之间耦合极低，没有固定的调用顺序，开发者可以自由组合。再加上<strong>LangSmith</strong>（调试和监控平台）和<strong>LangServe</strong>（部署平台），LangChain覆盖了AI应用的全生命周期。</p>
+<h3 id="2-4-LangChain的”坑”"><a href="#2-4-LangChain的”坑”" class="headerlink" title="2.4 LangChain的”坑”"></a>2.4 LangChain的”坑”</h3><p>但实话实说，LangChain也有它的不足：</p>
+<ul>
+<li><strong>过于复杂</strong>：功能太全面，初学者可能摸不着头脑</li>
+<li><strong>性能问题</strong>：处理过多数据时可能遇到效率瓶颈</li>
+<li><strong>版本迭代快</strong>：旧代码在新版本中可能无法运行，Open Issues常年上千个</li>
+</ul>
+<p>因此，如果你只需要处理文档检索和增强生成，也许你该看看下一个神器。</p>
+<hr>
+<h2 id="三、LlamaIndex：”小而美”的RAG专家"><a href="#三、LlamaIndex：”小而美”的RAG专家" class="headerlink" title="三、LlamaIndex：”小而美”的RAG专家"></a>三、LlamaIndex：”小而美”的RAG专家</h2><h3 id="3-1-LlamaIndex的定位"><a href="#3-1-LlamaIndex的定位" class="headerlink" title="3.1 LlamaIndex的定位"></a>3.1 LlamaIndex的定位</h3><p>LlamaIndex于2022年11月发布，与ChatGPT同时诞生。由Jerry Liu创建，2023年6月获得850万美元种子轮投资。</p>
+<p>如果说LangChain追求的是”大而全”，那么LlamaIndex走的就是”小而美”的路线——<strong>它专门聚焦于RAG（检索增强生成）技术的开发</strong>。</p>
+<p>RAG是什么？简单说，就是先检索相关信息，再将信息作为上下文喂给大模型，让模型基于这些信息生成答案。它位于大模型应用”从难到易”链条的中间位置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">重新训练模型 &gt; 微调模型 &gt; RAG（动态提示） &gt; 简单提示工程</span><br><span class="line">  最难                                         最易</span><br></pre></td></tr></table></figure>
+
+<p>RAG既不像重新训练或微调模型那样昂贵，也不像简单提示工程那样信息不足。它<strong>成本低、信息实时、结果可追溯</strong>，是企业级应用的最佳切入点。</p>
+<h3 id="3-2-为什么选LlamaIndex？"><a href="#3-2-为什么选LlamaIndex？" class="headerlink" title="3.2 为什么选LlamaIndex？"></a>3.2 为什么选LlamaIndex？</h3><p>LlamaIndex的核心优势在于：</p>
+<p><strong>文档组织一流。</strong> 在文档结构清晰度和可执行性方面，LlamaIndex比LangChain做得更好。这反映了团队在用户体验和接口设计上的投入。</p>
+<p><strong>多租户支持。</strong> 想象一个RAG系统中有多个用户，每个用户拥有各自的一套文档。多租户确保用户1的查询只从用户1的文档中获取响应，不会混入用户2的数据——这是企业数据安全性保证的关键。</p>
+<p><strong>极低的使用门槛。</strong> 高级API允许初学者用<strong>5行代码</strong>就完成数据提取和查询。对于复杂应用，底层API也允许高级用户自由定制。</p>
+<p>来看一个最简单的LlamaIndex示例——让Agent回答它”本来不知道”的信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载本地文档</span></span><br><span class="line"><span class="keyword">from</span> llama_index.core <span class="keyword">import</span> SimpleDirectoryReader</span><br><span class="line">documents = SimpleDirectoryReader(<span class="string">&quot;data&quot;</span>).load_data()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为文档建立索引</span></span><br><span class="line"><span class="keyword">from</span> llama_index <span class="keyword">import</span> VectorStoreIndex</span><br><span class="line">index = VectorStoreIndex.from_documents(documents)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建查询引擎</span></span><br><span class="line">query_engine = index.as_query_engine()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询</span></span><br><span class="line">response = query_engine.query(<span class="string">&quot;花语秘境的员工有几种角色？&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(response)</span><br><span class="line"><span class="comment"># 输出：花语秘境的员工有多个角色。无论是营销高手、技术鬼才还是客服天使...</span></span><br><span class="line"></span><br><span class="line">response = query_engine.query(<span class="string">&quot;花语秘境的Agent叫什么名字？&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(response)</span><br><span class="line"><span class="comment"># 输出：花语秘境的Agent叫作&quot;花语灵&quot;。</span></span><br></pre></td></tr></table></figure>
+
+<p>这就是RAG的魔力——大模型本来不知道”花语秘境”是什么，但通过检索本地文档，它”学会”了这些知识，并能准确回答问题。你还可以将索引持久化存储到本地，避免每次重复处理。</p>
+<h3 id="3-3-RAG的工作流程"><a href="#3-3-RAG的工作流程" class="headerlink" title="3.3 RAG的工作流程"></a>3.3 RAG的工作流程</h3><p>完整的RAG流程可以分为6步：</p>
+<ol>
+<li><strong>用户提出查询</strong>：向系统提出一个问题</li>
+<li><strong>Agent搜索相关信息</strong>：去互联网或企业内部向量数据库中搜索</li>
+<li><strong>检索信息</strong>：从搜索结果中提取具体信息作为生成上下文</li>
+<li><strong>传给大模型</strong>：将检索到的信息与原始查询一起喂给大模型</li>
+<li><strong>大模型生成响应</strong>：基于丰富的上下文生成答案</li>
+<li><strong>回答用户请求</strong>：将生成结果返回给用户</li>
+</ol>
+<p>这个过程也可以是循环的——用户的每次查询都能用来改进后续交互，实现动态、交互式的用户体验。</p>
+<hr>
+<h2 id="四、三者的关系：竞争与协作并存"><a href="#四、三者的关系：竞争与协作并存" class="headerlink" title="四、三者的关系：竞争与协作并存"></a>四、三者的关系：竞争与协作并存</h2><p>回到一个关键问题：<strong>OpenAI推出了Assistants（包括Code interpreter、File search等功能），这对LangChain和LlamaIndex会形成降维打击吗？</strong></p>
+<p>答案是：<strong>你中有我，我中有你，既有竞争，亦有协作。</strong></p>
+<ul>
+<li><strong>OpenAI API</strong> 是底层基础，提供模型能力。它的Assistants确实封装了一些Agent功能（如代码解释器、文件检索），但目前功能还比较简单。</li>
+<li><strong>LangChain</strong> 在OpenAI API之上构建了完整的开发生态，提供模型无关性（不绑定某一家的模型）、复杂链式逻辑、Agent编排等高级能力。</li>
+<li><strong>LlamaIndex</strong> 专注RAG赛道，在文档检索和增强生成方面做到了极致，这正是很多企业级Agent的核心需求。</li>
+</ul>
+<p>竞争推动创新，协作促进生态。这三个工具正在共同塑造AI Agent开发的未来图景。</p>
+<hr>
+<h2 id="五、给你的建议"><a href="#五、给你的建议" class="headerlink" title="五、给你的建议"></a>五、给你的建议</h2><p>如果你刚开始AI Agent开发之旅，我的建议是：</p>
+<ol>
+<li><strong>先玩透OpenAI API</strong>。理解model、messages、temperature、token这些核心概念，这是所有Agent的地基。</li>
+<li><strong>根据场景选框架</strong>。需要构建复杂Agent、多模型切换？上LangChain。专注于企业知识库问答、文档检索？选LlamaIndex。两者不互斥，可以通过接口相互调用。</li>
+<li><strong>关注成本</strong>。GPT-4比GPT-3.5 Turbo贵30倍。开发阶段可以用便宜模型，生产环境再考究模型选择。</li>
+<li><strong>重视JSON模式</strong>。让大模型输出结构化的JSON，你的Agent才能把”思考”转化为”行动”。</li>
+<li><strong>不要过度依赖框架</strong>。LangChain虽然强大，但如果你只是做简单的GPT调用，直接用OpenAI API完全没问题。用对工具，而不是用重工具。</li>
+</ol>
+<hr>
+<p>AI Agent的时代刚刚拉开帷幕。OpenAI API、LangChain、LlamaIndex——这三大神器，就是你进入这个时代的”入门三件套”。拿好它们，开始构建你的第一个Agent吧。</p>
+<hr>
+<p><em>本文核心内容参考自《大模型应用开发-动手做AI Agent》（2024中文版）第三章。如果你对Agent开发感兴趣，这本书用7个实战项目带你从入门到精通，推荐阅读。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a class="article-readmore" href="/2026/05/11/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E4%B8%89%E7%AB%A0-AI%20Agent%E5%BC%80%E5%8F%91%E4%B8%89%E5%A4%A7%E7%A5%9E%E5%99%A8/">继续阅读</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI-Agent/" rel="tag">AI Agent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/12/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E5%9B%9B%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          我用30行代码，让AI帮我做完了整个PPT——从数据分析到配图全自动
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/10/%E7%9F%A5%E4%B9%8E%E6%96%87%E7%AB%A0-%E7%AC%AC%E5%85%AD%E7%AB%A0-ReAct%E6%A1%86%E6%9E%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">大模型从&#34;只会聊天&#34;到&#34;能干活&#34;的关键一步：ReAct框架深度拆解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p class="footer-brand">芦鹏飞的 AI 博客</p>
+      <p class="footer-copy">&copy; 2026 芦鹏飞 · Built with Hexo</p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
